@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <title>Example website with articles</title>
+  <meta name="author" content="Angelique van Veen">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* ##############################   GENERAL   ############################## */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      max-width: 1500px;
+    }
+    html, body {
+      background-color: #666;
+      margin: auto;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+    header {background-color: #444;}
+    main {background-color: white;}
+    section.intro {padding: 20px;    }
+    a {color: black; text-decoration: none;}
+    a:hover {color: red;}
+    h2 {margin-bottom: 12px;}
+    h4 {margin-top: 12px; margin-bottom: 3px;}
+    /* ##############################   NAV   ############################## */
+    nav a {
+      float: left;
+      color: white;
+      font-size: 120%;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    /* ##############################   BIG IMAGE   ############################## */
+    .bigImage {margin-bottom: -4px;}
+    .bigImage img {width: 100%; margin: 0 auto;}
+    /* ##############################   ARTICLES on HOMEPAGE   ############################## */
+    article {
+      float: left;
+      background-color: white;
+      width: 100%;
+      border: 1px solid #ccc;
+      padding: 0.8vw;
+    }
+    article img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+    .rowContent {
+      margin: 1em;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    /* Clear floats after the columns */
+    .rowContent:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    /* ##############################   PAGES   ############################## */
+    /* Create two unequal columns that floats next to each other */
+    .column {float: left;}
+    .columnLeft {
+      float: left;
+      width: 25%;
+      background-color: #ddd;
+      padding: 1vw;
+    }
+    .columnRight {
+      float: left;
+      width: 75%;
+      background-color: white;
+      padding: 1vw 4vw 1vw 2vw;
+    }
+    /* Clear floats after the columns */
+    .rowColumn:after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    /* ##############################   STICKY FOOTER   ############################## */
+    footer {
+      background-color: #444;
+      color: white;
+      padding-top: 25px;
+      text-align: center;
+      font-size: 20px;
+    }
+    html, body {height: 100%;}
+    main {min-height: 100%; margin-bottom: -5em;}
+    main:after {content: ""; display: block;}
+    footer, main:after {height: 5em;}
+    /* ##############################   MEDIA QUERIES   ############################## */
+    /* for menu in sidebar */
+    @media only screen and (max-width: 992px) {
+        .column {width: 100%;}
+    }
+    /* XS - Extra small devices (phones, 576px and down) */
+    @media only screen and (max-width: 576px) {
+        article {width: 100%; position: relative;}
+        .columnLeft a {font-size: 100%;}
+    }
+    /* SM - Small devices (portrait tablets and large phones, 576px and up) */
+    @media only screen and (min-width: 576px) {
+        article {width: 50%; position: relative;}
+        nav a {font-size: 125%;}
+        main {margin-bottom: -4em;}
+        footer, main:after {height: 4em;}
+        .columnLeft a {font-size: 115%;}
+    }
+    /* MD - Medium devices (landscape tablets, 768px and up) */
+    @media only screen and (min-width: 768px) {
+        article {width: 33.33%; position: relative;}
+        nav a {font-size: 130%;}
+        .columnLeft a {font-size: 130%;}
+    }
+    /* LG - Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        article {width: 25%; position: relative;}
+        nav a {font-size: 135%;}
+        .columnLeft a {font-size: 145%;}
+    }
+    /* XL - Extra large devices (large laptops and desktops, 1200px and up) */
+    @media only screen and (min-width: 1200px) {
+        article {width: 20%; position: relative;}
+        nav a {font-size: 140%;}
+        .columnLeft a {font-size: 160%;}
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+
+<!-- ##############################   NAV   ############################## -->
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</nav>
+
+<!-- ##############################   BIGIMAGE   ############################## -->
+
+<div class="bigImage">
+  <img src="https://cdn.pixabay.com/photo/2017/11/03/17/04/computer-2914933_960_720.jpg" alt="Responsive" style="border:0;">
+</div>
+
+<!-- ##############################   ===   ############################## -->
+
+</header>
+
+<!-- TILL HERE EVERY PAGE THE SAME -->
+
+  <div class="rowColumn">
+
+<!-- ##############################   COLUMNLEFT   ############################## -->
+
+<div class="column columnLeft">
+  <a href="article-01.html">Sticky footer</a><br><br>
+  <a href="#">Article 2</a><br><br>
+  <a href="#">Article 3</a><br><br>
+  <a href="#">Article 4</a><br><br>
+</div>     <!-- EINDE: <div class="column columnLeft"> -->
+
+<!-- ##############################   COLUMNRIGHT   ############################## -->
+
+<section class="column columnRight">
+  <h2>Sticky footer</h2>
+  <p>The purpose of a sticky footer is that it "sticks" to the bottom of the browser window.<br><br>
+  In case there is enough content on the page to push the footer lower, it will still do that.<br>
+  But if the content on the page is short, a sticky footer will stick to the bottom of the browser window.</p>
+</section>   <!-- EINDE: <section class="column columnRight"> -->
+
+<!-- ##############################   ===   ############################## -->
+
+  </div>     <!-- EINDE: <div class="rowColumn"> -->
+</main>
+
+<!-- ##############################   FOOTER   ############################## -->
+
+<footer>
+  <p>This&nbsp;is&nbsp;a&nbsp;sticky&nbsp;footer. &nbsp;&nbsp;&nbsp; Made&nbsp;by:&nbsp;Angelique&nbsp;van&nbsp;Veen</p>
+</footer>
+
+<!-- ##############################   ===   ############################## -->
+
+  </body>
+</html>
